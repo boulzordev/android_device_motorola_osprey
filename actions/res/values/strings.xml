@@ -39,6 +39,15 @@
     <string name="ir_silencer_title">Wave to silence</string>
     <string name="ir_silencer_summary">Silence incoming calls by waving your hand across the screen</string>
 
+    <string name="feedback_intensity_title">Haptic feedback intensity</string>
+    <string name="feedback_intensity_summary">Strength of the haptic feedback for the
+        double-twist and chop-chop actions
+    </string>
+    <string name="feedback_intensity_none">Disabled</string>
+    <string name="feedback_intensity_low">Low</string>
+    <string name="feedback_intensity_medium">Medium</string>
+    <string name="feedback_intensity_high">High</string>
+
 
 </resources>
 
