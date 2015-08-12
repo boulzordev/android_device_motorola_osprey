@@ -28,7 +28,7 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_osprey.cpp
 
 # Kernel
-TARGET_KERNEL_CONFIG := osprey_defconfig
+TARGET_KERNEL_CONFIG := osprey-stock_defconfig
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216     # 16384 * 1024 mmcblk0p31
