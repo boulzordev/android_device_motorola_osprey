@@ -47,6 +47,7 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8916
 TARGET_KERNEL_CONFIG := osprey_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
+KERNEL_DEFCONFIG := osprey_defconfig
 
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := osprey
