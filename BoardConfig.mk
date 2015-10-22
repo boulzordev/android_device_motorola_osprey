@@ -46,6 +46,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8916
 TARGET_KERNEL_CONFIG := osprey_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := osprey,osprey_umts,osprey_u2,osprey_ud2,osprey_uds,osprey_cdma,osprey_udstv,xt1540,xt1541,xt1542,xt1543,xt1544,xt1548,xt1550
@@ -90,7 +91,7 @@ TARGET_PROVIDES_GPS_LOC_API := true
 # Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_osprey.c
+TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_osprey.cpp
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -124,32 +125,6 @@ include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    akmd09912.te \
-    atfwd.te \
-    atvc.te \
-    batt_health.te \
-    bluetooth_loader.te \
-    device.te \
-    file.te \
-    file_contexts \
-    healthd.te \
-    init.te \
-    init_shell.te \
-    mm-qcamerad.te \
-    property.te \
-    property_contexts \
-    qseecomd.te \
-    rild.te \
-    rmt_storage.te \
-    stml0xx.te \
-    surfaceflinger.te \
-    system_server.te \
-    tee.te \
-    ueventd.te \
-    vold.te \
-    wcnss_service.te
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
