@@ -506,8 +506,8 @@ service akmd09912 /system/bin/akmd09912
 
 service batt_health /system/bin/batt_health
     class late_start
-    user mot_pwric
-    group mot_pwric cache net_admin log
+    user system
+    group system cache net_admin log
     disabled
 
 service apanic_annotate /system/bin/sh /system/bin/apanic_annotate.sh build
