@@ -143,6 +143,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     e2fsck
 
+# Motorola
+PRODUCT_PACKAGES += \
+    libmoto
+
 # OMX
 PRODUCT_PACKAGES += \
     libdashplayer \

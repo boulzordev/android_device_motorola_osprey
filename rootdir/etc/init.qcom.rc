@@ -88,6 +88,7 @@ on init
 
     # ESDFS
     chown mot_esdfs root /proc/fs/esdfs/packages
+    export LD_PRELOAD "/system/lib/libmoto.so"
 
 on fs
     mount_all fstab.qcom
