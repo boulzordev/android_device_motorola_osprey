@@ -31,6 +31,7 @@ public class CMActionsSettings {
     private static final String GESTURE_CHOP_CHOP_KEY = "gesture_chop_chop";
     private static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
     private static final String GESTURE_IR_WAKEUP_KEY = "gesture_ir_wake_up";
+    private static final String GESTURE_IR_SILENCER_KEY = "gesture_ir_silencer";
 
     private final Context mContext;
     private final UpdatedStateNotifier mUpdatedStateNotifier;
@@ -38,6 +39,7 @@ public class CMActionsSettings {
     private boolean mCameraGestureEnabled;
     private boolean mChopChopEnabled;
     private boolean mIrWakeUpEnabled;
+    private boolean mIrSilencerEnabled;
     private boolean mPickUpGestureEnabled;
 
     public CMActionsSettings(Context context, UpdatedStateNotifier updatedStateNotifier) {
@@ -72,6 +74,10 @@ public class CMActionsSettings {
         return isDozeEnabled() && mPickUpGestureEnabled;
     }
 
+    public boolean isIrSilencerEnabled() {
+        return mIrSilencerEnabled;
+    }
+
     public void cameraAction() {
         new CameraActivationAction(mContext).action();
     }
@@ -85,6 +91,7 @@ public class CMActionsSettings {
         mChopChopEnabled = sharedPreferences.getBoolean(GESTURE_CHOP_CHOP_KEY, false);
         mIrWakeUpEnabled = sharedPreferences.getBoolean(GESTURE_IR_WAKEUP_KEY, false);
         mPickUpGestureEnabled = sharedPreferences.getBoolean(GESTURE_PICK_UP_KEY, false);
+        mIrSilencerEnabled = sharedPreferences.getBoolean(GESTURE_IR_SILENCER_KEY, false);
     }
 
     private SharedPreferences.OnSharedPreferenceChangeListener mPrefListener =
@@ -101,6 +108,8 @@ public class CMActionsSettings {
                 mIrWakeUpEnabled = sharedPreferences.getBoolean(GESTURE_IR_WAKEUP_KEY, false);
             } else if (GESTURE_PICK_UP_KEY.equals(key)) {
                 mPickUpGestureEnabled = sharedPreferences.getBoolean(GESTURE_PICK_UP_KEY, false);
+            } else if (GESTURE_IR_SILENCER_KEY.equals(key)) {
+                mIrSilencerEnabled = sharedPreferences.getBoolean(GESTURE_IR_SILENCER_KEY, false);
             } else {
                 updated = false;
             }
