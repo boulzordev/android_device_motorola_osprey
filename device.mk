@@ -213,6 +213,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcurl \
     libqsap_sdk \
+    libstlport \
     libQWiFiSoftApCfg \
     tcpdump \
     wcnss_service
