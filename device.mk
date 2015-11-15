@@ -142,7 +142,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libbson \
     libxml2 \
-    libtune2fs
+    libtune2fs \
+    Mms
 
 PRODUCT_PACKAGES += \
     e2fsck
