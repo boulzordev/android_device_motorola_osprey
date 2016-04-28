@@ -16,10 +16,18 @@
 # Inherit from msm8916-common
 $(call inherit-product, device/motorola/msm8916-common/msm8916.mk)
 
+# Screen density
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
+
+# Custom APN
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/apns-conf-vmob.xml:system/etc/apns-conf-vmob.xml \
+    $(LOCAL_PATH)/configs/apns-conf-usc.xml:system/etc/apns-conf-usc.xml
 
 # Media
 PRODUCT_COPY_FILES += \
